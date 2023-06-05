@@ -1,4 +1,12 @@
 /*-----------------------------*/
+
+:root {
+  --board-size: calc(500px - 10px);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
 /*-----------------------------Pantalla de inicio-----------------------------*/
 
 .mycol-izq {
@@ -41,8 +49,87 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: none;
 }
 
 .my-button {
   margin-top: 30px;
+}
+
+.start {
+  display: flex;
+  height: 40px;
+  width: 120px;
+  background-color: red;
+  color: #fff;
+  border: solid darkred;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+/*-----------------------------Main page game-----------------------------*/
+
+.container-fluid {
+  height: 100vh;
+}
+
+.contain-myvideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.myvideo {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mygame-izq {
+  background-color: #000;
+}
+
+.mygame-dch {
+  background-color: #000;
+}
+
+.tablero {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: var(--board-size);
+  width: var(--board-size);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  display: grid;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-collapse: separate;
+  padding: 20px;
+}
+
+.casilla {
+  display: flex;
+  outline: solid rgba(255, 255, 255, 0.7);
+}
+/*-----------------------------User interface-----------------------------*/
+.card {
+  margin-top: 20px;
+}
+.user-one {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.user-two {
+  background-color: rgba(255, 255, 255, 0.9);
 }
