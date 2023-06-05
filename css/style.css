@@ -1,0 +1,48 @@
+/*-----------------------------*/
+/*-----------------------------Pantalla de inicio-----------------------------*/
+
+.mycol-izq {
+  background-color: blueviolet;
+  height: 100vh;
+  background-image: url(../recursos/alliance.background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale();
+}
+
+.mycol-dch {
+  background-color: #000;
+  height: 100vh;
+  background-image: url(../recursos/horde.background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale();
+}
+.mycol-dch:hover {
+  filter: none;
+  cursor: pointer;
+}
+.mycol-izq:hover {
+  filter: none;
+  cursor: pointer;
+}
+
+/*-----------------------------botones menu-----------------------------*/
+
+.playerOne {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  height: 200px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.my-button {
+  margin-top: 30px;
+}
