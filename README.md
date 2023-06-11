@@ -19,15 +19,17 @@ Requeriamos de crear el juego del TIC TAC TOE (tres en raya), usando principalme
 ## Vistas
 
 Pagina principal</br>
-<img src="./img/readme/landing.png">
-Carta </br>
-<img src="./img/readme/carta.png">
-Productos destacados</br>
-<img src="./img/readme/productos.png">
+<img src="./img/readme/captura_inicio.png">
+Jugadores </br>
+<img src="./img/readme/captura_jugadores.png">
+Tablero</br>
+<img src="./img/readme/captura_tablero.png">
+Ganador</br>
+<img src="./img/readme/captura_ganador.png">
 
-## Deploy Restaurante
+## Deploy WoW - Tic Tac Toe
 
-<a href="https://stevengs7.github.io/Restaurante/" target="_blank"/>Ir a la pagina web del restaurante</a>
+<a href="https://stevengs7.github.io/TicTacToe/" target="_blank"/>Ir a la pagina web del restaurante</a>
 
 ## Stack
 
@@ -45,9 +47,9 @@ Productos destacados</br>
 
 ## Futuras funcionalidades
 
-✅ Añadir un un contador al numero de pokes que queramos comprar.</br>
-⬜ Tienda online con carrito en el cual podamos introducir nuestros datos para la compra</br>
-⬜ Añadir suscripcion de newsletter en el apartado de la Ubicación</br>
+✅ Sonido en la pagina de incio</br>
+⬜ Que cada jugador pueda escoger la ficha con la cual quiere jugar</br>
+⬜ Segun que jugador gane añadir una landing distinta para cada uno así como la música de fondo</br>
 
 ## Contacto
 
