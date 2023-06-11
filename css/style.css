@@ -1,7 +1,7 @@
 /*-----------------------------*/
 
 :root {
-  --board-size: calc(500px - 10px);
+  --board-size: calc(450px - 10px);
 }
 
 ::-webkit-scrollbar {
@@ -10,8 +10,7 @@
 /*-----------------------------Pantalla de inicio-----------------------------*/
 
 .mycol-izq {
-  background-color: blueviolet;
-  height: 100vh;
+  height: 50vh;
   background-image: url(../recursos/alliance.background.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,14 +19,14 @@
 }
 
 .mycol-dch {
-  background-color: #000;
-  height: 100vh;
+  height: 50vh;
   background-image: url(../recursos/horde.background.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   filter: grayscale();
 }
+
 .mycol-dch:hover {
   filter: none;
   cursor: pointer;
@@ -36,7 +35,20 @@
   filter: none;
   cursor: pointer;
 }
-
+#logo {
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-image: url(../img/logo.png);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: block;
+}
 /*-----------------------------botones menu-----------------------------*/
 
 #playerone {
@@ -53,8 +65,18 @@
   display: none;
 }
 
-.a {
-  height: 100vh;
+#playertwo {
+  background-color: #141414;
+  color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
 .my-button {
@@ -67,8 +89,7 @@
   width: 120px;
   background-color: red;
   color: #fff;
-  border: solid darkred;
-  border-radius: 20px;
+  border: none;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -76,6 +97,13 @@
   left: 50%;
   transform: translate(-50%);
   text-decoration: none;
+  z-index: 4;
+}
+
+.start:hover {
+  background-color: red;
+  color: #fff;
+  border-radius: 20px;
 }
 
 a {
@@ -97,37 +125,20 @@ a {
 }
 
 #horde {
-  height: 100vh;
+  height: 50vh;
 }
 
 #alliance {
-  height: 100vh;
+  height: 50vh;
+  align-items: center;
 }
+
 /*-----------------------------Main page game-----------------------------*/
 
-.container-fluid {
+.fondo {
   height: 100vh;
-}
-
-.contain-myvideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.myvideo {
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.mygame-izq {
-  background-color: #000;
-}
-
-.mygame-dch {
-  background-color: #000;
+  background-image: url(../img/game_background.jpeg);
+  background-position: center;
 }
 
 .tablero {
@@ -137,26 +148,195 @@ a {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   display: grid;
-  flex-wrap: wrap;
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-collapse: separate;
+  border-collapse: collapse;
   padding: 20px;
 }
 
 .casilla {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
   display: flex;
-  outline: solid rgba(255, 255, 255, 0.7);
+  border: solid rgba(255, 255, 255, 0.7);
+  font-size: 4em;
+  align-items: center;
+  justify-content: center;
+}
+
+#back-inicio {
+  display: flex;
+  height: 40px;
+  width: 120px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%);
+  text-decoration: none;
 }
 /*-----------------------------User interface-----------------------------*/
+.popup {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 12vmin;
+}
+
+.popup.hide {
+  display: none;
+}
+
+#new-game {
+  font-size: 0.3em;
+  padding: 0.5em 1em;
+  background-color: red;
+  color: #fff;
+  border-radius: 0.2em;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: #fff;
+}
+
+#winner {
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+}
+
 .card {
   margin-top: 20px;
 }
 .user-one {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255);
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.user-one img {
+  display: none;
+}
+
 .user-two {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255);
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-two img {
+  display: none;
+}
+
+/* remove border for edges */
+
+.casilla:nth-child(1),
+.casilla:nth-child(2),
+.casilla:nth-child(3) {
+  border-top: none;
+}
+
+.casilla:nth-child(1),
+.casilla:nth-child(4),
+.casilla:nth-child(7) {
+  border-left: none;
+}
+
+.casilla:nth-child(3),
+.casilla:nth-child(6),
+.casilla:nth-child(9) {
+  border-right: none;
+}
+
+.casilla:nth-child(7),
+.casilla:nth-child(8),
+.casilla:nth-child(9) {
+  border-bottom: none;
+}
+/*--------------------------------------- MEDIA ----------------------------------------*/
+
+@media screen and (min-width: 576px) {
+  #back-inicio {
+    display: flex;
+    height: 40px;
+    width: 120px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    text-decoration: none;
+  }
+
+  .user-one img {
+    display: block;
+  }
+
+  .user-one {
+    width: 400px;
+  }
+  .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user-two {
+    width: 400px;
+  }
+
+  .user-two img {
+    display: block;
+  }
+
+  .mycol-izq {
+    height: 100vh;
+    background-image: url(../recursos/alliance.background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale();
+  }
+
+  .mycol-dch {
+    height: 100vh;
+    background-image: url(../recursos/horde.background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale();
+  }
+
+  .mycol-dch:hover {
+    filter: none;
+    cursor: pointer;
+  }
+  .mycol-izq:hover {
+    filter: none;
+    cursor: pointer;
+  }
 }

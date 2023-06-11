@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <div id="logo"></div>
     <div class="container-fluid">
       <div class="row d-flex">
         <div class="col-sm-12 col-md-6 mycol-izq">
@@ -27,55 +28,37 @@
         <div class="card bando-interface" style="width: 17rem">
           <img src="img/bandos.png" class="card-img-top" alt="imagen" />
           <div class="card-body">
-            <h5>Escoge tu bando</h5>
             <p class="card-text">
-              Escoge tu bando clickando en una de las imagenes.
+              Escoge tu bando y lucha por el clickando en una de las imagenes.
             </p>
           </div>
         </div>
       </div>
       <div id="playerone">
-        <label for="username" class="form-label"
-          ><h5>Player username</h5></label
-        >
-        <input
-          type="name"
-          class="form-control"
-          id="username"
-          placeholder="Username"
-        />
-        <div
-          class="btn-group my-button"
-          role="group"
-          aria-label="Basic radio toggle button group"
-        >
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio"
-            id="btnradio1"
-          />
-          <label class="btn btn-outline-primary" for="btnradio1">PvP</label>
-
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio"
-            id="btnradio2"
-          />
-          <label class="btn btn-outline-primary" for="btnradio2"
-            ><a href="html/main_game.html" target="_self">CPU</a></label
-          >
+        <label for="username" class="form-label">
+          <h5>Introduce el nombre del jugador 1</h5>
+        </label>
+        <input id="username" type="name" class="form-control" placeholder="username"/>
+        <br>
+        <button onclick="showPlayertTwo()" type="button" class="btn btn-primary">2 Jugadores</button>
         </div>
+        <div id="playertwo">
+          <label for="username" class="form-label">
+            <h5>Introduce el nombre del jugador 2</h5>
+          </label>
+          <input id="username2" type="name" class="form-control" placeholder="username"/>
+          <br>
+            <button class="btn btn-primary" type="button">
+              <a href="html/main_game.html" target="_self">Jugar</a>  
+            </button>
+          </div>
       </div>
-      <button
-        id="empezar"
-        class="btn btn-secondary start"
-        onclick="playAudio(), mostrar()"
-      >
-        <audio id="myaudio" src="audio/background_music.mp3"></audio>Start
+      <button id="empezar" class="btn btn-secondary start" onclick="playAudio(), mostrar()">
+        <audio id="myaudio" src="audio/background_music.mp3">
+        </audio>Start
       </button>
     </div>
+    <script src="js/global.js"></script>
     <script src="js/main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
