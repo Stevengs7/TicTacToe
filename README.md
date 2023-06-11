@@ -29,7 +29,7 @@ Ganador</br>
 
 ## Deploy WoW - Tic Tac Toe
 
-<a href="https://stevengs7.github.io/TicTacToe/" target="_blank"/>Ir a la pagina web del restaurante</a>
+<a href="https://stevengs7.github.io/TicTacToe/" target="_blank"/>Ir al juego</a>
 
 ## Stack
 
@@ -42,6 +42,9 @@ Ganador</br>
 </a>
 <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">
     <img src= "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+
+<a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
+    <img src= "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
 </a>
  </div>
 
