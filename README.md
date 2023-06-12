@@ -1,4 +1,4 @@
-# Carta Restaurante Digital
+# Tic Tac Toe (WoW)
 
 <details>
   <summary>Contenido </summary>

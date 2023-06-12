@@ -18,7 +18,7 @@ const putplayerwinner = document.getElementById("winner");
 
 const newGame = () => {
   popupRef.classList.add("hide");
-  document.querySelectorAll("button").innerHTML(null);
+  document.querySelectorAll("button").innerHTML("");
 };
 
 putplayerone.innerHTML = sessionStorage.getItem(Pyer1);
@@ -29,7 +29,7 @@ putplayertwo.innerHTML = sessionStorage.getItem(Pyer2);
 let side = true;
 const casillas = new Array(9).fill(null);
 
-const slotList = document.querySelectorAll("button");
+const slotList = document.querySelectorAll(".casilla");
 slotList.forEach((slot, i) => {
   slot.addEventListener("click", (event) => {
     if (
@@ -43,6 +43,7 @@ slotList.forEach((slot, i) => {
       event.target.innerHTML = "O";
     }
     casillas[i] = side;
+    console.log(casillas);
     if (
       winnerCheck(0, 1, 2) ||
       winnerCheck(3, 4, 5) ||
@@ -52,25 +53,12 @@ slotList.forEach((slot, i) => {
       winnerCheck(2, 5, 8) ||
       winnerCheck(0, 4, 8) ||
       winnerCheck(2, 4, 6)
-    )
+    ) {
       popupPlayer();
+    }
     side = !side;
   });
 });
-
-/* setTimeout(() => {
-const getEmpate = () => {
-  let tie;
-  for (const casilla of casillas) {
-    if (casilla.innerHTML == false) {
-      if (tie == 8) {
-        putplayerwinner.innerHTML = "El juego termina en empate";
-      }
-    }
-    empate++;
-  }
-};
-}) */
 
 const winnerCheck = (a, b, c) => {
   if (
@@ -90,55 +78,4 @@ const popupPlayer = () => {
 };
 /*-------------------------Comprobar el Ganador--------------------------*/
 
-/* const winnerCheck = () => {
-  if (
-    firstWin[0] == firstWin[1] &&
-    firstWin[0] == firstWin[2] &&
-    firstWin[0] != ""
-  ) {
-    console.log("0 El ganador es: " + firstWin[0]);
-  } else if (
-    secondWin[3] == secondWin[4] &&
-    secondWin[3] == secondWin[5] &&
-    secondWin[3]
-  ) {
-    console.log("1 El ganador es: " + secondWin[3]);
-  } else if (
-    thirdWin[6] == thirdWin[7] &&
-    thirdWin[6] == thirdWin[8] &&
-    thirdWin[6]
-  ) {
-    console.log("2 El ganador es: " + thirdWin[6]);
-  } else if (
-    fourthWin[0] == fourthWin[3] &&
-    fourthWin[0] == fourthWin[6] &&
-    fourthWin[0]
-  ) {
-    console.log("3 El ganador es: " + fourthWin[0]);
-  } else if (
-    fifthWin[1] == secondWin[4] &&
-    fifthWin[1] == fifthWin[7] &&
-    fifthWin[1]
-  ) {
-    console.log("4 El ganador es: " + fifthWin[1]);
-  } else if (
-    sixthWin[2] == sixthWin[5] &&
-    sixthWin[2] == sixthWin[8] &&
-    sixthWin[2]
-  ) {
-    console.log("5 El ganador es: " + sixthWin[2]);
-  } else if (
-    seventhWin[0] == seventhWin[4] &&
-    seventhWin[0] == seventhWin[8] &&
-    seventhWin[0]
-  ) {
-    console.log("6 El ganador es: " + seventhWin[0]);
-  } else if (
-    eighthWin[2] == eighthWin[4] &&
-    eighthWin[2] == eighthWin[6] &&
-    eighthWin[2]
-  ) {
-    console.log("7 El ganador es: " + eighthWin[2]);
-  }
-};
- */
+
