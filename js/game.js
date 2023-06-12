@@ -16,10 +16,6 @@ const newgame = document.getElementById("new-game");
 const popupRef = document.querySelector(".popup");
 const putplayerwinner = document.getElementById("winner");
 
-const popupPlayer = () => {
-  popupRef.classList.remove("hide");
-};
-
 const newGame = () => {
   popupRef.classList.add("hide");
   document.querySelectorAll("button").innerHTML(null);
@@ -36,9 +32,14 @@ const casillas = new Array(9).fill(null);
 const slotList = document.querySelectorAll("button");
 slotList.forEach((slot, i) => {
   slot.addEventListener("click", (event) => {
-    if (side == true && slot != null) {
+    if (
+      side == true &&
+      slot.innerHTML == "" &&
+      slot.innerHTML != "O" &&
+      slot.innerHTML != "X"
+    ) {
       event.target.innerHTML = "X";
-    } else {
+    } else if (slot.innerHTML != "X") {
       event.target.innerHTML = "O";
     }
     casillas[i] = side;
@@ -53,14 +54,23 @@ slotList.forEach((slot, i) => {
       winnerCheck(2, 4, 6)
     )
       popupPlayer();
-    putplayerwinner.innerHTML = `El ganador es: ${
-      side ? sessionStorage.getItem(Pyer1) : sessionStorage.getItem(Pyer2)
-    }`;
     side = !side;
   });
 });
 
-/*-------------------------Comprobar el Ganador--------------------------*/
+/* setTimeout(() => {
+const getEmpate = () => {
+  let tie;
+  for (const casilla of casillas) {
+    if (casilla.innerHTML == false) {
+      if (tie == 8) {
+        putplayerwinner.innerHTML = "El juego termina en empate";
+      }
+    }
+    empate++;
+  }
+};
+}) */
 
 const winnerCheck = (a, b, c) => {
   if (
@@ -71,6 +81,14 @@ const winnerCheck = (a, b, c) => {
     return true;
   return false;
 };
+
+const popupPlayer = () => {
+  popupRef.classList.remove("hide");
+  putplayerwinner.innerHTML = `El ganador es: ${
+    side ? sessionStorage.getItem(Pyer1) : sessionStorage.getItem(Pyer2)
+  }`;
+};
+/*-------------------------Comprobar el Ganador--------------------------*/
 
 /* const winnerCheck = () => {
   if (
@@ -122,4 +140,5 @@ const winnerCheck = (a, b, c) => {
   ) {
     console.log("7 El ganador es: " + eighthWin[2]);
   }
-}; */
+};
+ */
