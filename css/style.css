@@ -135,6 +135,7 @@ a {
 
 #turnside1 {
   text-align: center;
+  display: block;
 }
 
 #turnside2 {
