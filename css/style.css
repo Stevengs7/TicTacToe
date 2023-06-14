@@ -133,6 +133,15 @@ a {
   align-items: center;
 }
 
+#turnside1 {
+  text-align: center;
+}
+
+#turnside2 {
+  text-align: center;
+  display: none;
+}
+
 /*-----------------------------Main page game-----------------------------*/
 
 .fondo {
@@ -177,7 +186,7 @@ a {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 17%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%);
   text-decoration: none;
@@ -319,7 +328,6 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: grayscale();
   }
 
   .mycol-dch {

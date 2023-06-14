@@ -68,8 +68,6 @@ if (eighthWin[2] == "X" && eighthWin[4] == "X" && eighthWin[6] == "X") {
   console.log("Gana O");
 }
 
-
-
 /*
 const winnerCheck = () => {
   if (
