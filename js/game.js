@@ -61,7 +61,7 @@ slotList.forEach((slot, i) => {
   );
 });
 
-/*-------------------------Comprobar el Ganador--------------------------*/
+// Comprobar el Ganador
 
 const winnerCheck = (a, b, c) => {
   if (
